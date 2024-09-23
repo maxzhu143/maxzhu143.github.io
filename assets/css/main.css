@@ -2502,7 +2502,7 @@ input, select, textarea {
 					text-shadow: 1px 0 0 #ffffff, -1px 0 0 #ffffff, 0 1px 0 #ffffff, 0 -1px 0 #ffffff;
 				}
 
-/* Image */
+/* Image 
 
 	.image {
 		border-radius: 4px;
@@ -2558,6 +2558,7 @@ input, select, textarea {
 			.image.fit img {
 				width: 100%;
 			}
+			*/
 
 /* List */
 
