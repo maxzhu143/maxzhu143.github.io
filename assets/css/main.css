@@ -623,7 +623,7 @@ input, select, textarea {
 		}
 
 	}
-	
+
 
 /* Container */
 
@@ -711,6 +711,10 @@ input, select, textarea {
 		    border-radius: 8px; /* Consistent rounding */
 		    margin-top: 15px;
 		}
+
+        .project-technologies li {
+            margin-bottom: 0px; /* Adjust as needed for tighter or looser spacing */
+        }
 /* Row */
 
 	.row {
@@ -2581,7 +2585,7 @@ input, select, textarea {
 
 
 
-/* Image 
+/* Image
 
 	.image {
 		border-radius: 4px;
@@ -3527,7 +3531,7 @@ input, select, textarea {
 	#banner {
 		background-attachment: fixed;
 		background-color: #272833;
-		background-image: url("../../images/banner.jpg");
+		background-image: url("../../images/intro.JPG");
 		background-position: center center;
 		background-size: cover;
 		box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.25);
