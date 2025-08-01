@@ -1,189 +1,135 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Hardware Projects</title>
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, user-scalable=no"
-        />
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <noscript
-            ><link rel="stylesheet" href="assets/css/noscript.css"
-        /></noscript>
-    </head>
-    <body class="is-preload">
-        <div id="page-wrapper">
-            <!-- Header -->
-            <header id="header">
-                <h1 id="logo"><a href="your-link.html"> </a></h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Projects - Max Zhu</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="software.html">SW Projects</a></li>
+                <li><a href="resumes/MaxResume.pdf" class="resume-btn">Resume</a></li>
+            </ul>
 
-                <nav id="nav">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li>
-                            <a href="#">Projects</a>
-                            <ul>
-                                <li><a href="hardware.html">Hardware</a></li>
-                                <li><a href="software.html">Software</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="hobbies.html">Hobbies</a></li>
-                        <li>
-                            <a
-                                href="resumes/Hardware.pdf"
-                                class="button primary"
-                                >HWResume</a
-                            >
-                        </li>
-                    </ul>
-                </nav>
-            </header>
 
-            <div id="main" class="wrapper style1">
-                <div class="container">
-                    <header class="major">
-                        <h2>Hardware Projects</h2>
+
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Hardware Projects</h1>
+            <p class="page-subtitle">A comprehensive showcase of my physical builds and innovations</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="container">
+            <!-- First Project -->
+            <div class="project-item">
+                <div class="project-content">
+                    <div class="project-text">
+                        <h3>DIY Spotify Car Thing</h3>
                         <p>
-                            A comprehensive showcase of my physical builds and
-                            innovations
+                            Inspired by the Spotify Car Thing, I engineered a compact desk gadget that seamlessly connects 
+                            to your Spotify account. It features a vibrant LCD display showcasing current song cover art 
+                            and intuitive haptic buttons for controlling playback – allowing you to rewind, play/pause, 
+                            skip tracks, and like songs with ease.
                         </p>
-                    </header>
-
-                    <!-- First Project -->
-                    <div class="row project-row">
-                        <div class="col-6 col-12-medium text">
-                            <h3>DIY Spotify Car Thing</h3>
-                            <p>
-                                Inspired by the Spotify Car Thing, I engineered
-                                a compact desk gadget that seamlessly connects
-                                to your Spotify account. It features a vibrant
-                                LCD display showcasing current song cover art
-                                and intuitive haptic buttons for controlling
-                                playback – allowing you to rewind, play/pause,
-                                skip tracks, and like songs with ease.
-                            </p>
-                            <div class="project-technologies">
-                                <h5>Technologies Used</h5>
-                                <ul>
-                                    <li>ESP8266 Microcontroller</li>
-                                    <li>LCD Display Module</li>
-                                    <li>C++ Programming</li>
-                                    <li>Spotify Web API</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-6 col-12-medium image">
-                            <img
-                                src="images/SpotifyThing.png"
-                                alt="DIY Spotify Car Thing"
-                                class="fit"
-                            />
-                        </div>
-                    </div>
-
-                    <!-- Second Project -->
-                    <div class="row project-row">
-                        <div class="col-6 col-12-medium image">
-                            <img
-                                src="images/Wordle.png"
-                                alt="WordleGame"
-                                class="fit"
-                            />
-                        </div>
-                        <div class="col-6 col-12-medium text">
-                            <h3>MBed Wordle Game</h3>
-                            <p>
-                                A simple hardware implementation of a Wordle
-                                game written in C++, that features an LCD to
-                                display animations and game progress, a NAV
-                                switch to select letters, mini buttons for
-                                tactile inputs, and a speaker for auditory
-                                feedback.
-                            </p>
-
-                            <div class="project-technologies">
-                                <h5>Technologies Used</h5>
-                                <ul>
-                                    <li>C++ Programming</li>
-                                    <li>mbed LPC1768</li>
-                                    <li>LCD and NAV Switch</li>
-                                </ul>
+                        <div class="project-technologies">
+                            <h4>Technologies Used</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">ESP8266 Microcontroller</span>
+                                <span class="tech-tag">LCD Display Module</span>
+                                <span class="tech-tag">C++ Programming</span>
+                                <span class="tech-tag">Spotify Web API</span>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Third Project -->
-                    <div class="row project-row">
-                        <div class="col-6 col-12-medium text">
-                            <h3>Custom Macropad</h3>
-                            <p>
-                                *work in progress* Having been a fan of
-                                keyboards for a long time, I decded to create my
-                                own. Creating a custom macropad would require me
-                                to create a custom PCB and do a little coding to
-                                ensure the microcontroller will output the
-                                things I want
-                            </p>
-                            <div class="project-technologies">
-                                <h5>Technologies Used</h5>
-                                <ul>
-                                    <li>KiCAD</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-6 col-12-medium image">
-                            <img
-                                src="images/Loading.jpg"
-                                alt="DIY Spotify Car Thing"
-                                class="fit"
-                            />
-                        </div>
+                    <div class="project-image">
+                        <img src="images/SpotifyThing.png" alt="DIY Spotify Car Thing">
                     </div>
                 </div>
             </div>
 
-            <!-- Footer -->
-            <footer id="footer">
-                <ul class="icons">
-                    <li>
-                        <a
-                            href="https://www.linkedin.com/in/max-zhu-920406273/"
-                            class="icon brands alt fa-linkedin-in"
-                            ><span class="label">LinkedIn</span></a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="https://github.com/maxzhu143"
-                            class="icon brands alt fa-github"
-                            ><span class="label">GitHub</span></a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="mailto:maxzhu143@gmail.com"
-                            class="icon solid alt fa-envelope"
-                            ><span class="label">Email</span></a
-                        >
-                    </li>
-                </ul>
+            <!-- Second Project -->
+            <div class="project-item">
+                <div class="project-content reverse">
+                    <div class="project-text">
+                        <h3>MBed Wordle Game</h3>
+                        <p>
+                            A simple hardware implementation of a Wordle game written in C++, that features an LCD to 
+                            display animations and game progress, a NAV switch to select letters, mini buttons for 
+                            game control, and LED indicators for feedback. This project demonstrates embedded systems 
+                            programming and user interface design in a constrained hardware environment.
+                        </p>
+                        <div class="project-technologies">
+                            <h4>Technologies Used</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">MBed Platform</span>
+                                <span class="tech-tag">C++ Programming</span>
+                                <span class="tech-tag">LCD Display</span>
+                                <span class="tech-tag">Embedded Systems</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <img src="images/Wordle.png" alt="MBed Wordle Game">
+                    </div>
+                </div>
+            </div>
 
-                <ul class="copyright">
-                    <li>&copy; feel free to use</li>
-                    <li>Design: Max Zhu</li>
-                </ul>
-            </footer>
+            <!-- Third Project -->
+            <div class="project-item">
+                <div class="project-content">
+                    <div class="project-text">
+                        <h3>Atlanta Food Finder</h3>
+                        <p>
+                            A comprehensive web application that helps users discover and explore restaurants in Atlanta. 
+                            Features include interactive maps, detailed restaurant information, user reviews, and advanced 
+                            filtering options. Built with modern web technologies for a seamless user experience.
+                        </p>
+                        <div class="project-technologies">
+                            <h4>Technologies Used</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">HTML/CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Google Maps API</span>
+                                <span class="tech-tag">Web Development</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-image">
+                        <img src="images/AtlantaFoodFinder.png" alt="Atlanta Food Finder">
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/jquery.scrolly.min.js"></script>
-        <script src="assets/js/jquery.dropotron.min.js"></script>
-        <script src="assets/js/jquery.scrollex.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
-    </body>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Max Zhu. Built with ❤️</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
 </html>

@@ -1,248 +1,86 @@
-
-
-(function($) {
-
-	var	$window = $(window),
-		$body = $('body');
-
-	// Breakpoints.
-		breakpoints({
-			xlarge:   [ '1281px',  '1680px' ],
-			large:    [ '981px',   '1280px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ null,      '480px'  ]
-		});
-
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
-
-	// Touch mode.
-		if (browser.mobile)
-			$body.addClass('is-touch');
-
-	// Scrolly links.
-		$('.scrolly').scrolly({
-			speed: 2000
-		});
-
-	// Dropdowns.
-		$('#nav > ul').dropotron({
-			alignment: 'right',
-			hideDelay: 350
-		});
-
-	// Nav.
-
-		// Title Bar.
-			$(
-				'<div id="titleBar">' +
-					'<a href="#navPanel" class="toggle"></a>' +
-					'<span class="title">' + $('#logo').html() + '</span>' +
-				'</div>'
-			)
-				.appendTo($body);
-
-		// Panel.
-			$(
-				'<div id="navPanel">' +
-					'<nav>' +
-						$('#nav').navList() +
-					'</nav>' +
-				'</div>'
-			)
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'left',
-					target: $body,
-					visibleClass: 'navPanel-visible'
-				});
-
-	// Parallax.
-	// Disabled on IE (choppy scrolling) and mobile platforms (poor performance).
-		if (browser.name == 'ie'
-		||	browser.mobile) {
-
-			$.fn._parallax = function() {
-
-				return $(this);
-
-			};
-
-		}
-		else {
-
-			$.fn._parallax = function() {
-
-				$(this).each(function() {
-
-					var $this = $(this),
-						on, off;
-
-					on = function() {
-
-						$this
-							.css('background-position', 'center 0px');
-
-						$window
-							.on('scroll._parallax', function() {
-
-								var pos = parseInt($window.scrollTop()) - parseInt($this.position().top);
-
-								$this.css('background-position', 'center ' + (pos * -0.15) + 'px');
-
-							});
-
-					};
-
-					off = function() {
-
-						$this
-							.css('background-position', '');
-
-						$window
-							.off('scroll._parallax');
-
-					};
-
-					breakpoints.on('<=medium', off);
-					breakpoints.on('>medium', on);
-
-				});
-
-				return $(this);
-
-			};
-
-			$window
-				.on('load resize', function() {
-					$window.trigger('scroll');
-				});
-
-		}
-
-	// Spotlights.
-		var $spotlights = $('.spotlight');
-
-		$spotlights
-			._parallax()
-			.each(function() {
-
-				var $this = $(this),
-					on, off;
-
-				on = function() {
-
-					var top, bottom, mode;
-
-					// Use main <img>'s src as this spotlight's background.
-						$this.css('background-image', 'url("' + $this.find('.image.main > img').attr('src') + '")');
-
-					// Side-specific scrollex tweaks.
-						if ($this.hasClass('top')) {
-
-							mode = 'top';
-							top = '-20%';
-							bottom = 0;
-
-						}
-						else if ($this.hasClass('bottom')) {
-
-							mode = 'bottom-only';
-							top = 0;
-							bottom = '20%';
-
-						}
-						else {
-
-							mode = 'middle';
-							top = 0;
-							bottom = 0;
-
-						}
-
-					// Add scrollex.
-						$this.scrollex({
-							mode:		mode,
-							top:		top,
-							bottom:		bottom,
-							initialize:	function(t) { $this.addClass('inactive'); },
-							terminate:	function(t) { $this.removeClass('inactive'); },
-							enter:		function(t) { $this.removeClass('inactive'); },
-
-							// Uncomment the line below to "rewind" when this spotlight scrolls out of view.
-
-							//leave:	function(t) { $this.addClass('inactive'); },
-
-						});
-
-				};
-
-				off = function() {
-
-					// Clear spotlight's background.
-						$this.css('background-image', '');
-
-					// Remove scrollex.
-						$this.unscrollex();
-
-				};
-
-				breakpoints.on('<=medium', off);
-				breakpoints.on('>medium', on);
-
-			});
-
-	// Wrappers.
-		var $wrappers = $('.wrapper');
-
-		$wrappers
-			.each(function() {
-
-				var $this = $(this),
-					on, off;
-
-				on = function() {
-
-					$this.scrollex({
-						top:		250,
-						bottom:		0,
-						initialize:	function(t) { $this.addClass('inactive'); },
-						terminate:	function(t) { $this.removeClass('inactive'); },
-						enter:		function(t) { $this.removeClass('inactive'); },
-
-						// Uncomment the line below to "rewind" when this wrapper scrolls out of view.
-
-						//leave:	function(t) { $this.addClass('inactive'); },
-
-					});
-
-				};
-
-				off = function() {
-					$this.unscrollex();
-				};
-
-				breakpoints.on('<=medium', off);
-				breakpoints.on('>medium', on);
-
-			});
-
-	// Banner.
-		var $banner = $('#banner');
-
-		$banner
-			._parallax();
-
-	
-
-})(jQuery);
+// Mobile Navigation Toggle
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Navbar background on scroll
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(26, 26, 26, 0.98)';
+        navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
+    } else {
+        navbar.style.background = 'rgba(26, 26, 26, 0.95)';
+        navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.2)';
+    }
+});
+
+// Intersection Observer for animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe elements for animation
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.project-card, .skill-item, .stat');
+    
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+});
+
+// Add loading animation
+window.addEventListener('load', () => {
+    document.body.style.opacity = '1';
+});
+
+
+
+// Initialize page
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.5s ease';
+    
+    setTimeout(() => {
+        document.body.style.opacity = '1';
+    }, 100);
+});
