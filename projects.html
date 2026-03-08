@@ -14,11 +14,16 @@
         <div class="nav-container">
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="resumes/Hardware.pdf" class="resume-btn">Resume</a></li>
+                <li class="dropdown">
+                    <a href="projects.html" class="dropdown-link" aria-expanded="false" aria-controls="projects-menu">Projects</a>
+                    <ul id="projects-menu" class="dropdown-menu" aria-hidden="true">
+                        <li><a href="hardware.html">Hardware</a></li>
+                        <li><a href="software.html">Software</a></li>
+                    </ul>
+                </li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="resumes/MaxResume.pdf" class="resume-btn">Resume</a></li>
             </ul>
-
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -82,13 +87,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Max Zhu</p>
-        </div>
-    </footer>
 
     <script src="assets/js/main.js"></script>
 </body>

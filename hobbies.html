@@ -12,16 +12,17 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">Max Zhu</a>
-            </div>
             <ul class="nav-menu">
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#projects">Projects</a></li>
-                <li><a href="index.html#skills">Skills</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="resumes/Hardware.pdf" class="resume-btn">Resume</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="projects.html" class="dropdown-link" aria-expanded="false" aria-controls="projects-menu">Projects</a>
+                    <ul id="projects-menu" class="dropdown-menu" aria-hidden="true">
+                        <li><a href="hardware.html">Hardware</a></li>
+                        <li><a href="software.html">Software</a></li>
+                    </ul>
+                </li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="resumes/MaxResume.pdf" class="resume-btn">Resume</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -122,13 +123,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Max Zhu. Built with ❤️</p>
-        </div>
-    </footer>
 
     <script src="assets/js/main.js"></script>
 </body>

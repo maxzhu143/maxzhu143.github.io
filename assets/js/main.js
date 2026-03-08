@@ -57,3 +57,33 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 });
+
+// Dropdown accessibility: sync aria-expanded / aria-hidden on hover and focus
+document.addEventListener('DOMContentLoaded', () => {
+    const dropdown = document.querySelector('.dropdown');
+    if (!dropdown) return;
+    const link = dropdown.querySelector('.dropdown-link');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    if (!link || !menu) return;
+
+    function open() {
+        link.setAttribute('aria-expanded', 'true');
+        menu.setAttribute('aria-hidden', 'false');
+    }
+    function close() {
+        link.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-hidden', 'true');
+    }
+
+    dropdown.addEventListener('mouseenter', open);
+    dropdown.addEventListener('mouseleave', close);
+    dropdown.addEventListener('focusin', open);
+    dropdown.addEventListener('focusout', (e) => {
+        // if focus moved outside the dropdown, close
+        if (!dropdown.contains(e.relatedTarget)) close();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') close();
+    });
+});
