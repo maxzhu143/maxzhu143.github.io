@@ -1,4 +1,16 @@
 @import url("fontawesome-all.min.css");
+ 
+/* Color variables to keep palette consistent across pages */
+:root {
+    --bg: #0B0E14;
+    --panel: #2d2d2d;
+    --card: #333333;
+    --text: #ffffff;
+    --muted: #b0b0b0;
+    --accent-primary: #00D4FF; /* used in hero, primary buttons */
+    --accent-secondary: #4a9eff; /* used for links, tags */
+    --accent-secondary-rgb: 74,158,255; /* for rgba use */
+}
 
 /* Reset and Base Styles */
 * {
@@ -14,8 +26,8 @@ html {
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
-    color: #ffffff;
-    background-color: #0B0E14;
+    color: var(--text);
+    background-color: var(--bg);
     overflow-x: hidden;
 }
 
@@ -48,13 +60,13 @@ body {
 .nav-logo a {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #333;
+    color: var(--text);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .nav-logo a:hover {
-    color: #00D4FF;
+    color: var(--accent-primary);
 }
 
 .nav-menu {
@@ -65,7 +77,7 @@ body {
 }
 
 .nav-menu a {
-    color: #ffffff;
+    color: var(--text);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -73,7 +85,7 @@ body {
 }
 
 .nav-menu a:hover {
-    color: #4a9eff;
+    color: var(--accent-secondary);
 }
 
 .nav-menu a::after {
@@ -83,7 +95,7 @@ body {
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: #00D4FF;
+    background-color: var(--accent-primary);
     transition: width 0.3s ease;
 }
 
@@ -92,8 +104,8 @@ body {
 }
 
 .resume-btn {
-    background: #4a9eff;
-    color: white !important;
+    background: var(--accent-secondary);
+    color: var(--text) !important;
     padding: 0.5rem 1rem;
     border-radius: 6px;
     transition: background-color 0.3s ease;
@@ -116,7 +128,7 @@ body {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: #ffffff;
+    background: var(--text);
     margin: 3px 0;
     transition: 0.3s;
 }
@@ -130,8 +142,8 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #0B0E14 0%, #2d2d2d 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--bg) 0%, var(--panel) 100%);
+    color: var(--text);
     position: relative;
     overflow: hidden;
 }
@@ -169,7 +181,7 @@ body {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    background: linear-gradient(45deg, #ffffff, #00D4FF);
+    background: linear-gradient(45deg, var(--text), var(--accent-primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -179,7 +191,7 @@ body {
     font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 1rem;
-    color: #00D4FF;
+    color: var(--accent-primary);
 }
 
 .hero-description {
@@ -230,8 +242,8 @@ body {
 }
 
 .btn-primary {
-    background: #00D4FF;
-    color: white;
+    background: var(--accent-primary);
+    color: var(--text);
 }
 
 .btn-primary:hover {
@@ -241,12 +253,12 @@ body {
 
 .btn-secondary {
     background: transparent;
-    color: white;
-    border: 2px solid white;
+    color: var(--text);
+    border: 2px solid var(--text);
 }
 
 .btn-secondary:hover {
-    background: white;
+    background: var(--text);
     color: #253031;
     transform: translateY(-2px);
 }
@@ -278,7 +290,7 @@ section {
     font-weight: 700;
     text-align: center;
     margin-bottom: 3rem;
-    color: #ffffff;
+    color: var(--text);
     position: relative;
 }
 
@@ -290,13 +302,13 @@ section {
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: #00D4FF;
+    background: var(--accent-primary);
     border-radius: 2px;
 }
 
 /* About Section */
 .about {
-    background: #2d2d2d;
+    background: var(--panel);
     padding-bottom: 2rem; /* reduced space below About */
 
 }
@@ -310,7 +322,7 @@ section {
 .about-text p {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
-    color: #b0b0b0;
+    color: var(--muted);
     line-height: 1.8;
 }
 
@@ -322,7 +334,7 @@ section {
 }
 
 .stat {
-    background: #333333;
+    background: var(--card);
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -336,12 +348,12 @@ section {
 .stat h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #4a9eff;
+    color: var(--accent-secondary);
     margin-bottom: 0.5rem;
 }
 
 .stat p {
-    color: #b0b0b0;
+    color: var(--muted);
     font-weight: 500;
 }
 
@@ -354,7 +366,7 @@ section {
 }
 
 .project-card {
-    background: #333333;
+    background: var(--card);
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
@@ -386,15 +398,60 @@ section {
     padding: 2rem;
 }
 
+/* Ensure project cards stack content vertically with centered text
+   Photo on top, title, blurb, then link (rounded button) */
+.project-card .project-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    gap: 0.75rem;
+}
+
+.project-card .project-tags {
+    justify-content: center;
+}
+
+.project-card .project-content h3,
+.project-card .project-text h3 {
+    margin: 0.5rem 0 0.25rem 0;
+}
+
+.project-card .project-content p,
+.project-card .project-text p {
+    margin: 0.25rem 0 0.75rem 0;
+    max-width: 42ch;
+}
+
+.project-card .project-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    background: var(--accent-secondary);
+    color: var(--text);
+    text-decoration: none;
+    transition: background-color 200ms ease, color 200ms ease, transform 150ms ease;
+    will-change: background-color, color, transform;
+}
+
+.project-card .project-link:hover {
+    background: var(--text);
+    color: var(--accent-secondary);
+    transform: scale(1.05);
+}
+
+
 .project-content h3 {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: #ffffff;
+    color: var(--text);
 }
 
 .project-content p {
-    color: #b0b0b0;
+    color: var(--muted);
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
@@ -402,9 +459,9 @@ section {
 /* Dropdown styles for navbar Projects (appended) */
 .dropdown { position: relative; }
 .dropdown-link { background:none; border:none; color:inherit; font:inherit; cursor:pointer; padding:0.25rem 0.5rem; text-decoration:none; }
-.dropdown-menu { position: absolute; top:100%; left:0; background: #0b0e14; border:1px solid rgba(255,255,255,0.06); box-shadow:0 6px 12px rgba(0,0,0,0.5); min-width:160px; padding:0.25rem 0; margin:0; z-index:1000; display:none; }
+.dropdown-menu { position: absolute; top:100%; left:0; background: var(--bg); border:1px solid rgba(255,255,255,0.06); box-shadow:0 6px 12px rgba(0,0,0,0.5); min-width:160px; padding:0.25rem 0; margin:0; z-index:1000; display:none; }
 .dropdown-menu li { list-style:none; }
-.dropdown-menu a { display:block; padding:0.5rem 1rem; color:#ffffff; text-decoration:none; }
+.dropdown-menu a { display:block; padding:0.5rem 1rem; color:var(--text); text-decoration:none; }
 .dropdown-menu a:hover { background: rgba(255,255,255,0.03); }
 .dropdown-link:focus { outline:2px solid #6ca0ff; outline-offset:2px; }
 
@@ -422,8 +479,8 @@ section {
 }
 
 .tag {
-    background: rgba(74, 158, 255, 0.2);
-    color: #4a9eff;
+    background: rgba(var(--accent-secondary-rgb), 0.18);
+    color: var(--accent-secondary);
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-size: 0.875rem;
@@ -431,7 +488,7 @@ section {
 }
 
 .project-link {
-    color: #4a9eff;
+    color: var(--accent-secondary);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
@@ -443,7 +500,7 @@ section {
 
 /* Skills Section */
 .skills {
-    background: #2d2d2d;
+    background: var(--panel);
     padding-top: 2rem; /* reduced space above Skills */
 
 }
@@ -459,7 +516,7 @@ section {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    color: #ffffff;
+    color: var(--text);
     text-align: center;
 }
 
@@ -470,7 +527,7 @@ section {
 }
 
 .skill-item {
-    background: #333333;
+    background: var(--card);
     padding: 1.5rem;
     border-radius: 12px;
     text-align: center;
@@ -494,21 +551,21 @@ section {
 
 .skill-item i {
     font-size: 2rem;
-    color: #4a9eff;
+    color: var(--accent-secondary);
     margin-bottom: 0.75rem;
 }
 
 .skill-item span {
     font-weight: 500;
-    color: #ffffff;
+    color: var(--text);
 }
 
 
 
 /* Footer */
 .footer {
-    background: #2d2d2d;
-    color: white;
+    background: var(--panel);
+    color: var(--text);
     text-align: center;
     padding: 2rem 0;
 }
@@ -635,8 +692,8 @@ section {
 
 /* Page Header */
 .page-header {
-    background: linear-gradient(135deg, #0B0E14 0%, #2d2d2d 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--bg) 0%, var(--panel) 100%);
+    color: var(--text);
     padding: 8rem 0 4rem;
     text-align: center;
 }
@@ -657,35 +714,36 @@ section {
 /* Projects Section */
 .projects-section {
     padding: 4rem 0;
-    background: #0B0E14;
+    background: var(--bg);
 }
 
 .project-item {
     margin-bottom: 4rem;
 }
 
-.project-content {
+
+.projects-section .project-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
-    background: #333333;
+    background: var(--card);
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
 
-.project-content:hover {
+.projects-section .project-content:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.project-content.reverse {
+.projects-section .project-content.reverse {
     direction: rtl;
 }
 
-.project-content.reverse .project-text {
+.projects-section .project-content.reverse .project-text {
     direction: ltr;
 }
 
@@ -697,11 +755,11 @@ section {
     font-size: 1.75rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    color: #ffffff;
+    color: var(--text);
 }
 
 .project-text p {
-    color: #b0b0b0;
+    color: var(--muted);
     line-height: 1.8;
     margin-bottom: 1.5rem;
 }
@@ -710,7 +768,7 @@ section {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #ffffff;
+    color: var(--text);
 }
 
 .tech-tags {
@@ -720,8 +778,8 @@ section {
 }
 
 .tech-tag {
-    background: rgba(74, 158, 255, 0.2);
-    color: #4a9eff;
+    background: rgba(var(--accent-secondary-rgb), 0.18);
+    color: var(--accent-secondary);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.875rem;
@@ -785,9 +843,9 @@ html {
 
 /* 2. The Hover state */
 .pop-highlight:hover {
-    color: #4a9eff; /* Changes color to your accent blue */
+    color: var(--accent-secondary); /* Changes color to your accent blue */
     transform: scale(1.08); /* Only 8% bigger (barely noticeable movement) */
-    text-shadow: 0 0 8px rgba(74, 158, 255, 0.3); /* Adds a tiny "soft glow" */
+    text-shadow: 0 0 8px rgba(var(--accent-secondary-rgb), 0.28); /* Adds a tiny "soft glow" */
 }
 
 /* 1. The initial state (hidden and shifted down/right) */
