@@ -25,11 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Navbar Scroll Effect
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(26, 26, 26, 0.98)';
-            navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3)';
+            navbar.style.background = 'rgba(255, 253, 245, 0.97)';
+            navbar.style.boxShadow = '5px 5px 0px #1a1a2e';
         } else {
-            navbar.style.background = 'transparent';
-            navbar.style.boxShadow = 'none';
+            navbar.style.background = '#ffffff';
+            navbar.style.boxShadow = '5px 5px 0px #1a1a2e';
         }
     });
 
